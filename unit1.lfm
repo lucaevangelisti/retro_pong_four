@@ -1,0 +1,120 @@
+object frmMain: TfrmMain
+  Left = 321
+  Height = 400
+  Top = 170
+  Width = 600
+  Caption = 'Retro Pong 4'
+  ClientHeight = 400
+  ClientWidth = 600
+  Color = clBlack
+  OnCreate = FormCreate
+  OnMouseMove = ControlPaddle
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  WindowState = wsMaximized
+  object lblScore: TLabel
+    Left = 408
+    Height = 17
+    Top = 0
+    Width = 186
+    Alignment = taRightJustify
+    Anchors = [akTop, akRight]
+    AutoSize = False
+    Caption = 'Score: 0'
+    Font.Color = clWhite
+    ParentColor = False
+    ParentFont = False
+  end
+  object Ball: TShape
+    Left = 120
+    Height = 20
+    Top = 232
+    Width = 20
+  end
+  object PaddleBottom: TShape
+    Left = 184
+    Height = 20
+    Top = 380
+    Width = 80
+    OnMouseMove = PaddleBottomMouseMove
+  end
+  object lblGameOver: TLabel
+    Left = 0
+    Height = 31
+    Top = 117
+    Width = 600
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    Caption = 'Game Over'
+    Font.Color = clWhite
+    Font.Height = -27
+    Font.Name = 'Sans'
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblRestart: TLabel
+    Left = 0
+    Height = 31
+    Top = 152
+    Width = 600
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    Caption = 'Restart'
+    Font.Color = clWhite
+    Font.Height = -19
+    Font.Name = 'Sans'
+    ParentColor = False
+    ParentFont = False
+    OnClick = lblRestartClick
+    OnMouseEnter = lblRestartMouseEnter
+    OnMouseLeave = lblRestartMouseLeave
+  end
+  object PaddleLeft: TShape
+    Left = 0
+    Height = 80
+    Top = 152
+    Width = 20
+    OnMouseMove = PaddleLeftMouseMove
+  end
+  object PaddleRight: TShape
+    Left = 580
+    Height = 80
+    Top = 152
+    Width = 20
+    OnMouseMove = PaddleRightMouseMove
+  end
+  object PaddleTop: TShape
+    Left = 184
+    Height = 20
+    Top = 0
+    Width = 80
+    OnMouseMove = PaddleTopMouseMove
+  end
+  object lblThanks: TLabel
+    Left = 0
+    Height = 31
+    Top = 192
+    Width = 600
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    Caption = 'Thanks to Miguel Bebensee (www.devstructor.com)'
+    Font.Color = clWhite
+    Font.Height = -16
+    Font.Name = 'Sans'
+    ParentColor = False
+    ParentFont = False
+    OnClick = lblRestartClick
+    OnMouseEnter = lblRestartMouseEnter
+    OnMouseLeave = lblRestartMouseLeave
+  end
+  object tmrGame: TTimer
+    Enabled = False
+    Interval = 25
+    OnTimer = tmrGameTimer
+    left = 45
+    top = 56
+  end
+end
